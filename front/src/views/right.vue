@@ -1,10 +1,15 @@
 <template> 
     <aside>
-        right
+        <button @click="a">test</button>
     </aside>
 </template>
 
 <script setup lang="ts">
+    import api from "../api/request"
+
+    function a(){
+        api({ url: "/getUserById?id=1", method: "get" }).then((res: any) => {console.log(res)})
+   	}
 </script>
 
 <style scoped>
